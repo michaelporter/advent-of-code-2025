@@ -3,6 +3,9 @@
 instructions = []
 
 File.open("day_1/input.txt") do |f|
+  # collect the lines as two value arrays using #scan to
+  # grab the non-digit value first, and then all digit values
+  # ex: [["R", 10], ["L", 83], ...]
   f.each_line { |line| instructions << line.chomp.scan(/^\D|\d+/) }
 end
 
