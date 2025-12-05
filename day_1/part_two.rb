@@ -11,10 +11,10 @@ File.open("day_1/input.txt") do |f|
 end
 
 # output a list of positive and negative numbers
-instructions.map! { |x| 
+instructions.map { |x| 
   x => [/R|L/i => d, c] # this will error if any other letter appears
   d == "R" ? c.to_i : c.to_i * -1
-}.reduce(50) { |position, instruction|
+}.reduce(50) do |position, instruction|
   new_pos = (position + instruction) % 100
   turns, notches_rem = instruction.abs.divmod(100)
 
@@ -24,6 +24,6 @@ instructions.map! { |x|
   zero_counts += 1 if new_pos == 0
   
   new_pos
-}
+end
 
 puts "zero counts: #{zero_counts}"
