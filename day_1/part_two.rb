@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# 
+#https://adventofcode.com/2025/day/1#part2
 
 instructions = []
 zero_counts = 0
